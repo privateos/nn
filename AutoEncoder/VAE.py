@@ -86,7 +86,7 @@ def test_VariationalAutoEncoder():
     for epoch in range(epochs):
         for batch_index, (train_x, train_y) in enumerate(train_dataloader):
             x_hat, kld = model(train_x)
-            loss = criterion(x_hat, train_x) + 10*kld
+            loss = criterion(x_hat, train_x) + kld
             
 
             optimizer.zero_grad()
